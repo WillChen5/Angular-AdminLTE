@@ -24,7 +24,14 @@
     <!-- <adminlte-app class="wrapper"></adminlte-app> -->
     <div ng-include="'views/main.html'" class="wrapper"></div>
 
-        <script src="bower_components/echarts/dist/echarts.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/echarts/dist/echarts.js"></script>
+    <!-- <script src="bower_components/echarts/map/js/china.js"></script> -->
     <script src="bower_components/requirejs/require.js" data-main="scripts/config.js"></script>
+    <script>
+        $.get('scripts/controllers/data.json', function(data) {
+            echarts.registerMap('wuhan', data);
+        });
+    </script>
   </body>
 </html>
